@@ -35,8 +35,6 @@ def shortestBFS(start, end, graph):
                 if i == end:
                     return new_path
             found.append(element)
-
-
 arr = {
   'A' : ['B','C'],
   'B' : ['D', 'E'],
