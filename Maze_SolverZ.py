@@ -5,8 +5,6 @@ WIDTH, HEIGHT = img.size
 size = WIDTH * HEIGHT
 data = [data[offset:offset+WIDTH] for offset in range(0, size, WIDTH)]
 
-##for row in data:
-##    print(row)
 queue = []
 checked = []
 def breadthSearch(checked, graph, s):
@@ -36,8 +34,6 @@ def shortestBFS(start, end, graph):
                 queue.append(new_path)
                 if i == end:
                     return new_path
-
-            # mark node as explored
             found.append(element)
 
 
