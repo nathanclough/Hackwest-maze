@@ -1,2 +1,4 @@
 # Hackwest-maze
-maze solver
+maze solver 
+
+z stuff
