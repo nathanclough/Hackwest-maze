@@ -1,2 +1,2 @@
 class Nodes:
-    print("HackWest Texas")
+    print("Welcome to the Maze Solver")
