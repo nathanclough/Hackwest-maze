@@ -12,7 +12,7 @@ maze[2][3] = 1
 maze[2][4] = 1
 maze[3][4] = 1
 sol = Solution(maze)
-print sol.get_nodes()
+print(sol.get_nodes())
 sol.display()
 
 

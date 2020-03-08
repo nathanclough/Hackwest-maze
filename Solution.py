@@ -1,4 +1,3 @@
-import Graph
 
 class Solution:
     def __init__(self, maze):
@@ -38,6 +37,6 @@ class Solution:
             c=0
             r = r + 1
     def display(self):
-        print self.nodes
+        print(self.nodes)
     def get_dict (self):
         return self.nodes

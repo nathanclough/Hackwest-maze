@@ -30,17 +30,5 @@ def shortestBFS(start, end, graph):
 s.get_nodes()
 arr = s.get_dict()
 start = s.find_start()
-print start
 end = s.find_end()
-print end
-print arr
-'''{(0, 1): [(1, 1)],
-       (1, 2): [(1, 3), (1, 1)],
-       (1, 3): [(2, 3), (1, 2)],
-       (2, 1): [(1, 1)],
-       (2, 4): [(3, 4), (2, 3)],
-       (2, 3): [(2, 4), (1, 3)],
-       (1, 0): [(1, 1)],
-       (3, 4): [(2, 4)],
-       (1, 1): [(2, 1), (1, 2), (0, 1), (1, 0)]}'''
 print(shortestBFS(start,end,arr))
