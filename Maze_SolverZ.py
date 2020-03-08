@@ -1,9 +1,9 @@
 from PIL import Image
 import Joey
-import file_Picker
+import filepicker
 from Solution import Solution
-import timeit
-file = file_Picker.opener()
+file = filepicker.opener()
+
 img = Image.open(file)
 data = list(img.getdata())
 WIDTH, HEIGHT = img.size
