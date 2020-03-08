@@ -7,7 +7,7 @@ def DrawMaze(Img, a):
     draw = ImageDraw.Draw(img)
     i=0
     while i<len(a):
-        draw.point((a[i][1],a[i][0]), fill=ImageColor.getcolor("white", "RGB"))
+        draw.point((a[i][1],a[i][0]), fill=ImageColor.getcolor("green", "RGB"))
         i=i+1
     del draw
     img.save("SOLVED_MAZE.png")
