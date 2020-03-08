@@ -1,4 +1,5 @@
 from PIL import Image
+import Joey
 from Solution import Solution
 
 img = Image.open('small.png')
@@ -31,4 +32,5 @@ s.get_nodes()
 arr = s.get_dict()
 start = s.find_start()
 end = s.find_end()
-print(shortestBFS(start,end,arr))
+a = shortestBFS(start,end,arr)
+Joey.DrawMaze(a)
