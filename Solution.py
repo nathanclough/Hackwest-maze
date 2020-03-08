@@ -8,15 +8,14 @@ class Solution:
         pos = [0, 0]
         for i in range(len(self.maze[0])):
             if self.maze[0][i] == 1:
-                pos = [0, i]
+                pos = (0, i)
         return pos
 
     def find_end(self):
         pos = [0,0]
-        print len(self.maze)
         for i in range(len(self.maze[0])):
            if 1 == self.maze[len(self.maze)-1][i]:
-                pos =[len(self.maze)-1,i]
+                pos =(len(self.maze)-1,i)
         return pos
     def neighbors(self, node):
         dirs = [(1, 0), (0, 1), (-1, 0), (0, -1)]
@@ -40,3 +39,5 @@ class Solution:
             r = r + 1
     def display(self):
         print self.nodes
+    def get_dict (self):
+        return self.nodes
