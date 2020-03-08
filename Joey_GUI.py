@@ -3,13 +3,13 @@ from PIL import Image
 root = Tk()
 
 def Enlarge(Sol_Img, Img):
-    im=Image.open(Sol_Img)
-    im2 = Image.open(Img)
+    im = Image.open(Sol_Img)
     x = im.width
-    im2 = im.resize(size=(9 * x, 9 * x))
-    im2.show()
     im = im.resize(size=(9 * x, 9 * x))
     im.show()
+    im2 = Image.open(Img)
+    im2 = im2.resize(size=(9 * x, 9 * x))
+    im2.show()
 
 def Display_Results(Img, Sol_Img):
     TempImg= Image.open(Sol_Img)
@@ -32,6 +32,6 @@ def Display_Results(Img, Sol_Img):
     canvas.create_image(temp,40, anchor=NW, image=img2)
     btn = Button(root,width=5, text="Exit", command=root.destroy, font = 'Impact 10', bg="black", fg="red")
     btn.place(x=width/2+20, y=height-28)
-    btn = Button(root,width=5, text="Enlarge", command=lambda: Enlarge(Sol_Img, Img), font = 'Impact 10', bg="black", fg="red")
+    btn = Button(root,width=5, text="Enlarge", command=lambda: Enlarge(Img,Sol_Img), font = 'Impact 10', bg="black", fg="red")
     btn.place(x=width/2-60, y=height-28)
     root.mainloop()
