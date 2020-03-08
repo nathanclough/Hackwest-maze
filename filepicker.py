@@ -1,5 +1,4 @@
 import os
-from tkinter import Tk
 from tkinter.filedialog import askopenfilename
 import shutil
 
