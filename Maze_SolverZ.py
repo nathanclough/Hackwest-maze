@@ -1,8 +1,9 @@
 from PIL import Image
 import Joey
+import filepicker
 from Solution import Solution
-FileName='braid200.png'
-img = Image.open(FileName)
+file = filepicker.opener()
+img = Image.open(file)
 data = list(img.getdata())
 WIDTH, HEIGHT = img.size
 size = WIDTH * HEIGHT
@@ -33,4 +34,4 @@ arr = s.get_dict()
 start = s.find_start()
 end = s.find_end()
 a = shortestBFS(start,end,arr)
-Joey.DrawMaze(FileName, a)
+Joey.DrawMaze(file, a)
