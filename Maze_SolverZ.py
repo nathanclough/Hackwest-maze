@@ -1,4 +1,5 @@
 from PIL import Image
+from collections import deque
 img = Image.open('small.png')
 data = list(img.getdata())
 WIDTH, HEIGHT = img.size
@@ -19,7 +20,7 @@ def breadthSearch(checked, graph, s):
                 checked.append(i)
 
 def shortestBFS(start, end, graph):
-    found = []
+    found = set()
     queue = [[start]]
     if start == end:
         return"Found connections"
@@ -27,20 +28,20 @@ def shortestBFS(start, end, graph):
         path = queue.pop(0)
         element = path[-1]
         if element not in found:
-            neighbor = graph[element]
-            for i in neighbor:
+            for i in graph.get(element,[]):
                 new_path = list(path)
                 new_path.append(i)
                 queue.append(new_path)
                 if i == end:
                     return new_path
-            found.append(element)
-arr = {
-  'A' : ['B','C'],
-  'B' : ['D', 'E'],
-  'C' : ['F'],
-  'D' : [],
-  'E' : ['F'],
-  'F' : []
-}
-print(shortestBFS('A','F',arr))
+            found.add(element)
+arr = {(0, 1): [(1, 1)],
+       (1, 2): [(1, 3), (1, 1)],
+       (1, 3): [(2, 3), (1, 2)],
+       (2, 1): [(1, 1)],
+       (2, 4): [(3, 4), (2, 3)],
+       (2, 3): [(2, 4), (1, 3)],
+       (1, 0): [(1, 1)],
+       (3, 4): [(2, 4)],
+       (1, 1): [(2, 1), (1, 2), (0, 1), (1, 0)]}
+print(shortestBFS((0,1),(3,4),arr))
