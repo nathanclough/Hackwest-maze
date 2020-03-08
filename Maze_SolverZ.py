@@ -3,6 +3,7 @@ import Joey
 import filepicker
 from Solution import Solution
 file = filepicker.opener()
+
 img = Image.open(file)
 data = list(img.getdata())
 WIDTH, HEIGHT = img.size
@@ -11,7 +12,7 @@ data = [data[offset:offset+WIDTH] for offset in range(0, size, WIDTH)]
 s = Solution(data)
 queue = []
 checked = []
-
+Start = timeit.default_timer()
 def shortestBFS(start, end, graph):
     found = set()
     queue = [[start]]
@@ -34,4 +35,7 @@ arr = s.get_dict()
 start = s.find_start()
 end = s.find_end()
 a = shortestBFS(start,end,arr)
-Joey.DrawMaze(file, a)
+
+Joey.DrawMaze(file,a)
+Final = timeit.default_timer()
+print('Time: ', Final - Start)
