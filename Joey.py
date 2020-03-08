@@ -1,7 +1,6 @@
 from PIL import Image, ImageDraw, ImageColor
 import Joey_GUI
 
-
 def DrawMaze(Img,a):
     img = Image.open(Img).convert("RGB")
     draw = ImageDraw.Draw(img)

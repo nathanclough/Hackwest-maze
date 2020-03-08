@@ -1,11 +1,11 @@
 from PIL import Image
 import Joey
+import filepicker
 from Solution import Solution
-import file_Picker
 import timeit
 
-open = file_Picker.opener()
-img = Image.open(open)
+file = filepicker.opener()
+img = Image.open(file)
 data = list(img.getdata())
 WIDTH, HEIGHT = img.size
 size = WIDTH * HEIGHT
@@ -36,6 +36,8 @@ arr = s.get_dict()
 start = s.find_start()
 end = s.find_end()
 a = shortestBFS(start,end,arr)
-End = timeit.default_timer()
-print('Time: ', End - Start)
-Joey.DrawMaze(open,a)
+
+Final = timeit.default_timer()
+print('Time: ', Final - Start)
+Joey.DrawMaze(file,a)
+
