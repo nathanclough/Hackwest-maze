@@ -1,8 +1,10 @@
 from PIL import Image
 import Joey
+import file_Picker
 from Solution import Solution
-
-img = Image.open('small.png')
+import timeit
+file = file_Picker.opener()
+img = Image.open(file)
 data = list(img.getdata())
 WIDTH, HEIGHT = img.size
 size = WIDTH * HEIGHT
@@ -10,7 +12,7 @@ data = [data[offset:offset+WIDTH] for offset in range(0, size, WIDTH)]
 s = Solution(data)
 queue = []
 checked = []
-
+Start = timeit.default_timer()
 def shortestBFS(start, end, graph):
     found = set()
     queue = [[start]]
@@ -33,4 +35,7 @@ arr = s.get_dict()
 start = s.find_start()
 end = s.find_end()
 a = shortestBFS(start,end,arr)
-Joey.DrawMaze(a)
+Joey.DrawMaze(file,a)
+
+Final = timeit.default_timer()
+print('Time: ', Final - Start)
