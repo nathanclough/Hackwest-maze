@@ -1,7 +1,17 @@
 class Solution:
     def __init__(self, maze):
         self.maze = maze
-
+        self.nodes = []
+    def get_nodes(self):
+        r = 0
+        c = 0
+        for row in self.maze:
+            for col in row:
+                if self.maze[r][c] == 1:
+                    self.nodes.append([r, c])
+                c = c+1
+            c=0
+            r = r + 1
     def find_start(self):
         pos = [0, 0]
         for i in range(len(self.maze[0])):
@@ -28,5 +38,5 @@ class Solution:
         return result
 
     def display(self):
-        for x in range(0, len(self.maze)):
-            print(self.maze[x])
+        for x in self.nodes:
+            print(self.neighbors(x))
