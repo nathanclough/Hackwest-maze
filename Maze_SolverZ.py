@@ -35,7 +35,6 @@ arr = s.get_dict()
 start = s.find_start()
 end = s.find_end()
 a = shortestBFS(start,end,arr)
-
-Joey.DrawMaze(file,a)
 Final = timeit.default_timer()
 print('Time: ', Final - Start)
+Joey.DrawMaze(file,a)
